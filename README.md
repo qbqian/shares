@@ -7,5 +7,5 @@
 
 ````
 $db = $this->model->getDataSource();
-$db->value($value,’string’);
+$db->value($value,'string');
 ````    

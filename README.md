@@ -25,3 +25,11 @@ HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep 
 setfacl -R -m u:${HTTPDUSER}:rwx storage/
 setfacl -R -m u:${HTTPDUSER}:rwx bootstrap/cache/
 ````
+
+## PHP Excel
+
+php excel 内容第一个字符不能为=，会报错PHPExcel_Calculation_Exception。
+解决办法：内容前面添加一个Ascii char number 0 (zero)。
+````
+$text= chr(0).$text;
+````

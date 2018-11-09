@@ -17,6 +17,15 @@ HTTPDUSER=`ps aux | grep -E 'nobody|[n]ginx' | grep -v root | head -1 | cut -d\ 
 setfacl -R -m u:${HTTPDUSER}:rwx app/tmp
 setfacl -R -d -m u:${HTTPDUSER}:rwx app/tmp
 ````
+### 修复报错cakephp Warning (2): count() [function.count]: Parameter must be an array or an object that implements Countable [CORE/src/Database/QueryCompiler.php, line 126
+
+```
+https://github.com/cakephp/cakephp/blob/master/src/Database/QueryCompiler.php#L128
+````
+
+### php7.2 修复cakephp session 报错
+
+https://github.com/cakephp/cakephp/issues/11628
 
 ## Laravel 目录权限设置
 

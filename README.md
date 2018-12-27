@@ -27,6 +27,14 @@ https://github.com/cakephp/cakephp/blob/master/src/Database/QueryCompiler.php#L1
 
 https://github.com/cakephp/cakephp/issues/11628
 
+
+### cakephp3 CacheSession bug
+
+当 session engine 为 CacheSession 时
+，调用logout时会报 Warning: Warning (2): session_regenerate_id(): Session object destruction failed.  ID: user (path: /tmp)
+解决办法：
+https://github.com/cakephp/cakephp/commit/e808b70d431caa6d850f7531bec1f728c84d5442
+
 ## Laravel 目录权限设置
 
 ````
@@ -42,11 +50,3 @@ php excel 内容第一个字符不能为=，会报错PHPExcel_Calculation_Except
 ````
 $text= chr(0).$text;
 ````
-
-
-## cakephp3 CacheSession bug
-
-当 session engine 为 CacheSession 时
-，调用logout时会报 Warning: Warning (2): session_regenerate_id(): Session object destruction failed.  ID: user (path: /tmp)
-解决办法：
-https://github.com/cakephp/cakephp/commit/e808b70d431caa6d850f7531bec1f728c84d5442
